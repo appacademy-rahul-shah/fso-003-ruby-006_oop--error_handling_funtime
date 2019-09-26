@@ -1,0 +1,78 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug open file",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${file}",
+    },
+    {
+      "name": "Start Rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "server",
+        "-p",
+        "3000"
+      ]
+    },
+    {
+      "name": "Debug Rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/usr/local/bundle/bin/bundle",
+      "pathToRDebugIDE": "/usr/local/bundle/gems/ruby-debug-ide-0.7.0",
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "server",
+        "-p",
+        "3000"
+      ]
+    },
+    {
+      "name": "Run RSpec - all",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "/usr/local/bundle/bin/rspec",
+      "args": [
+        "--pattern",
+        "${workspaceRoot}/spec/**/*_rspec.rb"
+      ]
+    },
+    {
+      "name": "Debug RSpec - open spec file",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/usr/local/bundle/bin/bundle",
+      "pathToRDebugIDE": "/usr/local/bundle/gems/ruby-debug-ide-0.7.0",
+      "debuggerPort": "1235",
+      "program": "/usr/local/bundle/bin/rspec",
+      "args": [
+        "${file}"
+      ]
+    },
+    {
+      "name": "Debug RSpec - open spec file on a certain line",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/usr/local/bundle/bin/bundle",
+      "pathToRDebugIDE": "/usr/local/bundle/gems/ruby-debug-ide-0.7.0",
+      "debuggerPort": "1235",
+      "program": "/usr/local/bundle/bin/rspec",
+      "args": [
+        "${file}:${lineNumber}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "dockerFile": "Dockerfile",
+  "settings": {
+    "ruby.lint": {
+      "rubocop": true
+    },
+    "ruby.lintDebounceTime": 500,
+    "ruby.format": "rubocop",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 1500,
+    "editor.tabSize": 2,
+    "solargraph.useBundler": true
+  },
+  "postCreateCommand": "bundle install",
+  "extensions": [
+    "rebornix.Ruby",
+    "castwide.solargraph",
+    "formulahendry.code-runner"
+  ]
+}
